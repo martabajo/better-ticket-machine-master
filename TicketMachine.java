@@ -81,6 +81,7 @@ public class TicketMachine
             // Reduce the balance by the prince.
             balance = balance - price;
         }
+        //Insertar mas dinero
         else
         {
             int amountLeftToPay = price - balance;
@@ -89,7 +90,7 @@ public class TicketMachine
         }
     }
     /**
-     * Comprar ticket con 10% de descuento
+     * Comprar ticket con 10% de descuento.
      */
     
      public void imprimirTicketConDescuento()
