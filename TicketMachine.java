@@ -142,7 +142,7 @@ public class TicketMachine
     }
   
     /**
-     * 
+     * Vaciar la maquina
      */
     public int emptyMachine()
     {
@@ -151,10 +151,5 @@ public class TicketMachine
         return machineMoney;
     
     }
-    
-    /**
-     * 
-     */
-    
 }
 
