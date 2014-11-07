@@ -132,7 +132,7 @@ public class TicketMachine
     
     /** 
      * Devuelve el dinero que hace falta meter
-     * para poder imprimir un ticket
+     * para poder imprimir un ticket nuevo.
      */
     public int getAmountLeftToPay()
     {
