@@ -17,15 +17,19 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
-
+    
+    privete int discountPrice;
+    
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int cost, int percentagediscount)
     {
         price = cost;
+        discountPrice = price - (price * percentageDiscount / 100);
         balance = 0;
         total = 0;
+        
     }
 
     /**
@@ -84,18 +88,19 @@ public class TicketMachine
         //Insertar mas dinero
         else
         {
-            int amountLeftToPay = price - balance;
-            System.out.println("You must insert at least: " +
-                amountLeftToPay + " more cents.");
+            int amountLeftToPay = price - balance; //variable local
+            System.out.println("Tienes que insertar: " +
+                amountLeftToPay + " mas centimos.");
         }
     }
+    
     /**
-     * Comprar ticket con 10% de descuento.
+     *  Crear un metodo que imprime ticket con 10% de descuento.
      */
     
      public void imprimirTicketConDescuento()
     {
-        int precioConDescuento = ((price*90)/100);
+        int precioConDescuento = ((price*90)/100); //variable local
         if(balance >= precioConDescuento) {
             // Simulate the printing of a ticket.
             System.out.println("##################");
@@ -113,11 +118,12 @@ public class TicketMachine
         else 
         {
             int amountLeftToPay = precioConDescuento - balance;
-            System.out.println("You must insert at least: " +
-                amountLeftToPay + " more cents.");
+            System.out.println("Tienes que insertar: " +
+                amountLeftToPay + " mas centimos.");
 
         }
     }
+   
     /**
      * Return the money in the balance.
      * The balance is cleared.
@@ -147,7 +153,7 @@ public class TicketMachine
      */
     public int emptyMachine()
     {
-        int machineMoney = total;
+        int machineMoney = total; //variable local
         total = 0;
         return machineMoney;
     
