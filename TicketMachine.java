@@ -18,12 +18,12 @@ public class TicketMachine
     // The total amount of money collected by this machine.
     private int total;
     
-    privete int discountPrice;
+    private int discountPrice;
     
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost, int percentagediscount)
+    public TicketMachine(int cost, int percentageDiscount)
     {
         price = cost;
         discountPrice = price - (price * percentageDiscount / 100);
