@@ -20,6 +20,7 @@ public class TicketMachine
     
     private int discountPrice;
     
+    private boolean discount;
     /**
      * Create a machine that issues tickets of the given price.
      */
@@ -147,7 +148,40 @@ public class TicketMachine
         return amountLeftToPay;
         
     }
-  
+    
+    public void printDiscountTicket()
+    {
+        if (discount == true)
+        {
+            if(balance >= price) 
+           {
+                // Simulate the printing of a ticket.
+                System.out.println("##################");
+                System.out.println("# The BlueJ Line");
+                System.out.println("# Ticket");
+                System.out.println("# " + price + " cents.");
+                System.out.println("##################");
+                System.out.println();
+    
+                // Update the total collected with the price.
+                total = total + price;
+                // Reduce the balance by the prince.
+                balance = balance - price;
+           }
+           else 
+           {
+                int amountLeftToPay;
+                amountLeftToPay = discountPrice - balance;
+                System.out.println("You must insert at least: " +
+                                   amountLeftToPay + " more cents.");
+                        
+           }
+        }
+        else
+        {
+            System.out.println("This machine doesn't allow discount tickets");
+        }
+    }
     /**
      * Vaciar la maquina
      */
